@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './App.css';
-import PixelSnow from './components/PixelSnow.jsx';
+import '../App.css';
+import PixelSnow from '../components/PixelSnow.jsx';
 
 function Intro() {
   const navigate = useNavigate();
