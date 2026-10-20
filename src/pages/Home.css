@@ -29,6 +29,6 @@ body,
 .floating-nav {
   position: absolute;
   top: 24px;
-  left: 24px;
-  z-index: 0;
+  right: 24px;
+  z-index: 10;
 }

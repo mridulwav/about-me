@@ -1,16 +1,27 @@
-# React + Vite
+# Deploy to Zoho Catalyst
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project builds as a static Vite site. Catalyst serves the generated `dist/` directory.
 
-Currently, two official plugins are available:
+## First-time setup
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+1. Install the [Zoho Catalyst CLI](https://www.npmjs.com/package/zcatalyst-cli): `npm install -g zcatalyst-cli`.
+2. Sign in and link this folder to your Catalyst project:
 
-## React Compiler
+   ```sh
+   catalyst login
+   catalyst init
+   ```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+   Select your existing Catalyst project when prompted.
 
-## Expanding the ESLint configuration
+3. Install the project dependencies: `npm install`.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Deploy
+
+Run:
+
+```sh
+npm run deploy
+```
+
+This builds the site and deploys only the Catalyst web client. To build without deploying, run `npm run build`.
