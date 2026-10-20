@@ -1,10 +1,3 @@
-@font-face {
-  font-family: 'japanRamen';
-  src: url('/fonts/ClashDisplay-Semibold.otf') format('opentype');
-  font-weight: 700;
-  font-style: normal;
-}
-
 * {
   box-sizing: border-box;
 }
@@ -25,45 +18,68 @@ body {
 .intro {
   position: relative;
   z-index: 1;
+  width: 100%;
   min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-
-  background: transparent;
-
   filter: blur(10px);
   animation: unblur 2s ease-out forwards;
 }
+
 .introimg img {
+  filter: drop-shadow(0 12px 20px rgba(255, 255, 255, 0.28))
+    drop-shadow(0 4px 10px rgba(20, 10, 35, 0.8));
+  display: block;
+  width: min(80vw, 480px);
+  height: auto;
   user-select: none;
   -webkit-user-drag: none;
   pointer-events: none;
 }
 
+.cd-button {
+  display: block;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.cd-button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 8px;
+  border-radius: 50%;
+}
+
 .introtext {
-  font-family: 'japanRamen', sans-serif;
+  font-family: 'Pixelify Sans', sans-serif;
+  color: #fff;
   user-select: none;
   -webkit-user-select: none;
   pointer-events: none;
-  animation: fadeIn 5s ease-out forwards;
+  animation: fadeIn 2s ease-out both;
 }
 
 .introtext h1 {
-  font-family: 'japanRamen', sans-serif;
+  margin: 0 0 24px;
+  font-family: 'Pixelify Sans', sans-serif;
+  font-size: clamp(2rem, 6vw, 3.5rem);
   font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: normal;
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(0);
   }
   to {
     opacity: 1;
-    transform: translateY(-40px);
   }
 }
 
@@ -71,4 +87,21 @@ body {
   to {
     filter: blur(0);
   }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spin {
+  animation: spin 1s linear infinite;
 }
