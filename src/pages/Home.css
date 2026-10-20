@@ -11,12 +11,24 @@ body,
 }
 
 .home {
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  position: relative;
+  min-height: 100vh;
+  background-color: #f5ebdd;
 }
 
+/* Paper covers the entire page */
 .paper {
-  width: min(100%, 848px);
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  min-height: 100%;
+  z-index: 10;
+}
+
+/* Navbar floats above the paper */
+.floating-nav {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  z-index: 0;
 }

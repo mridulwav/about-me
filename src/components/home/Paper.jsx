@@ -6,8 +6,8 @@ function Paper() {
       <PaperCrumple
         src={`${import.meta.env.BASE_URL}letter.png`}
         alt="A print to crumple"
-        width={800}
-        height={800}
+        width={1800}
+        height={1800}
         sceneHeight={848}
         releaseBehavior="restore"
         crumpleAmount={0.85}
