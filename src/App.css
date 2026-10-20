@@ -1,0 +1,74 @@
+@font-face {
+  font-family: 'japanRamen';
+  src: url('/fonts/ClashDisplay-Semibold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #000;
+}
+
+.intro {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  background: transparent;
+
+  filter: blur(10px);
+  animation: unblur 2s ease-out forwards;
+}
+.introimg img {
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
+}
+
+.introtext {
+  font-family: 'japanRamen', sans-serif;
+  user-select: none;
+  -webkit-user-select: none;
+  pointer-events: none;
+  animation: fadeIn 5s ease-out forwards;
+}
+
+.introtext h1 {
+  font-family: 'japanRamen', sans-serif;
+  font-weight: 700;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-40px);
+  }
+}
+
+@keyframes unblur {
+  to {
+    filter: blur(0);
+  }
+}
