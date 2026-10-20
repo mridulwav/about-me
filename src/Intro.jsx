@@ -30,7 +30,7 @@ function Intro() {
     }, 7000);
 
     navigationTimer.current = window.setTimeout(() => {
-      navigate('/home');
+      navigate('/home', { replace: true });
     }, 15000);
   }
 
